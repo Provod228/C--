@@ -16,3 +16,8 @@ int Product::getId()
 {
 	return id;
 }
+
+
+bool Product::operator<(const Product& other) {
+	return id < other.id;
+}

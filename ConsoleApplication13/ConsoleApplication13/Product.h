@@ -14,7 +14,5 @@ public:
 	std::string getTitle();
 	int getId();
 	
-	bool operator<(const Product& other) const {
-		return id < other.id;
-	}
+	bool operator<(const Product& other);
 };

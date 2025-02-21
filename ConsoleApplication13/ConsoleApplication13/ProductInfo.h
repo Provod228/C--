@@ -14,7 +14,5 @@ public:
 	int getQuantity();
 	
 	// Добавляем оператор сравнения
-	bool operator<(const ProductInfo& other) const {
-		return price < other.price;
-	}
+	bool operator<(const ProductInfo& other);
 };
