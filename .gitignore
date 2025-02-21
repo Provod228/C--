@@ -33,4 +33,3 @@ makefile
 
 # Игнорируем другие системные файлы
 Thumbs.db
-.DS_Store
