@@ -24,13 +24,13 @@ void ShopManager::addShop(Shop shop)
 	shops.push_back(shop);
 }
 
-std::map<ProductInfo, std::string> ShopManager::getProductMinPrice(std::string title_product)
+std::pair<ProductInfo, std::string> ShopManager::getProductMinPrice(std::string title_product)
 {
-    int min_price = 0;
+    double min_price = 0;
     double price;
     ProductInfo min_price_product;
     std::string name_shop;
-    std::map<ProductInfo, std::string> min_info;
+    std::pair<ProductInfo, std::string> min_info;
     for (Shop shop : shops) {
         price = shop.getProduct(title_product).getPrice();
         if (min_price == 0) {
@@ -44,6 +44,7 @@ std::map<ProductInfo, std::string> ShopManager::getProductMinPrice(std::string t
             name_shop = shop.getTitle();
         }
     }
-    min_info[min_price_product] = name_shop;
+    min_info.first = min_price_product;
+    min_info.second = name_shop;
     return min_info;
 }

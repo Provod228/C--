@@ -50,8 +50,8 @@ int main() {
 			std::cout << "Введите цену: ";
 			std::cin >> price;
 
-			Product product(productName);
-			ProductInfo productInfo(quantity, price, product);
+
+			ProductInfo productInfo(quantity, price, productName);
 			
 			for (auto& shop : shopManager.getShops()) {
 				if (shop.getTitle() == shopName) {
@@ -119,12 +119,10 @@ int main() {
 			std::cin >> productName;
 			
 			auto minPrice = shopManager.getProductMinPrice(productName);
-			if (!minPrice.empty()) {
-				for(auto it : minPrice) {
-					ProductInfo prodInfo = it.first;
-					std::cout << "Самая низкая цена: " << prodInfo.getPrice() 
-							<< " в магазине " << it.second << std::endl;
-				}
+			if (!minPrice.first.getTitle().empty() and !minPrice.second.empty()) {
+				ProductInfo prodInfo = minPrice.first;
+				std::cout << "Самая низкая цена: " << prodInfo.getPrice() 
+						<< " в магазине " << minPrice.second << std::endl;
 			}
 			else {
 				std::cout << "Товар не найден в магазинах.\n";

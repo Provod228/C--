@@ -12,5 +12,5 @@ public:
 	std::vector<Shop>& getShops();
 	void delShop(std::string title_shop);
 	void addShop(Shop shop);
-	std::map<ProductInfo, std::string> getProductMinPrice(std::string title_product);
+	std::pair<ProductInfo, std::string> getProductMinPrice(std::string title_product);
 };

@@ -8,7 +8,7 @@ protected:
 	int quantity;
 public:
 	ProductInfo();
-	ProductInfo(int quantity, double price, Product product);
+	ProductInfo(int quantity, double price, std::string title_product);
 	std::string getTitle();
 	double getPrice();
 	int getQuantity();
