@@ -11,8 +11,8 @@ public:
 
 	Product(std::string title);
 	
-	std::string getTitle();
-	int getId();
+	std::string getTitle() const;
+	int getId() const;
 	
-	bool operator<(const Product& other);
+	bool operator<(const Product& other) const;
 };

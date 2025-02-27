@@ -9,10 +9,10 @@ protected:
 public:
 	ProductInfo();
 	ProductInfo(int quantity, double price, std::string title_product);
-	std::string getTitle();
-	double getPrice();
-	int getQuantity();
+	std::string getTitle() const;
+	double getPrice() const;
+	int getQuantity() const;
 	
 	// Добавляем оператор сравнения
-	bool operator<(const ProductInfo& other);
+	bool operator<(const ProductInfo& other) const;
 };
